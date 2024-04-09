@@ -1,0 +1,311 @@
+body {
+    padding: 0;
+    padding-top: 40px; /* keeps it from overlapping with navigation tabs */
+    margin: 0;
+    background-color: whitesmoke;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+/* NAVIGATION TABS */
+/* -------------------------------------------------------------------------------------------------------------- */
+
+.nav-tabs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it's above other elements */
+    background-color: whitesmoke;
+    border-bottom: 2px solid #ccc; /* Add a bottom border */
+}
+
+/* inactive tab links */
+.nav-tabs .nav-link { 
+    color: #707070; /* Text color */ /* previously #333 */
+    font-weight: bold; /* Bold font */
+}
+
+/* active tab link */
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active { 
+    /* background-color: #f8f9fa; Background color */
+    background-color: #E8E8E8; /* Background color */
+    border-color: #ccc; /* Border color */
+    color: #996600; /* Text color */ /* previously #555 */
+    border-radius: 0; /* Remove border radius */
+}
+
+.tab-content {
+    padding-top: 60px;
+    padding: 20px; /* Add padding */
+}
+
+/* Target the dropdown menu */
+.dropdown-menu {
+    background-color: whitesmoke; /* Background color */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Box shadow */
+    
+}
+
+/* Style the dropdown items */
+.dropdown-item {
+    color: #333; /* Text color */
+    padding: 8px 12px; /* Padding */
+}
+
+/* Style the dropdown items on hover */
+.dropdown-item:hover {
+    background-color: #E8E8E8; /* Hover background color */
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+/* CONTAINERS */
+/* -------------------------------------------------------------------------------------------------------------- */
+
+.container {
+    max-width: 100%; /* take up the full width of the viewport */
+}
+
+/* #map1_container {
+    max-width: 100%;
+    /* height: 600px;  */
+    /* margin: 3px; */
+    /* border: 2px solid #996600;  /* removed because defined under #map1 */
+/* } */
+
+#hs_container {
+    max-width: 300px;
+    min-height: 300px; /* maintain aspect ratio */
+    margin: 5px; /* add spacing between images */
+}
+
+#margin5px {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+/* IMAGES */
+/* -------------------------------------------------------------------------------------------------------------- */
+
+.container [id^="imgElement_BoxPlot"] {
+    max-width: 47%; /* ensure images don't exceed container width */
+    height: auto; /* maintain aspect ratio */
+    margin: 3px; /* add spacing between images */
+    object-position: center; /* center the image */
+    float: center;
+    border-radius: 5px;
+}
+
+.container [id^="imgElement_ViolinPlot"] {
+    max-width: 47%; /* ensure images don't exceed container width */
+    height: auto; /* maintain aspect ratio */
+    margin: 3px; /* add spacing between images */
+    object-position: center; /* center the image */
+    float: center;
+    border-radius: 5px;
+}
+
+.container #imgElement_Piper\(Triangle\) {
+    max-width: 95%; /* ensure images don't exceed container width */
+    height: auto; /* maintain aspect ratio */
+    /* margin: 3px; /* add spacing between images */
+    object-position: left; /* center the image */
+    float: left;
+    border-radius: 5px;
+}
+
+.container #imgElement_Piper\(Contour\) {
+    max-width: 100%; /* ensure images don't exceed container width */
+    height: auto; /* maintain aspect ratio */
+    /* margin: 3px; /* add spacing between images */
+    object-position: center; /* center the image */
+    float: center;
+    border-radius: 5px;
+}
+
+.container #imgElement_Piper\(Color\) {
+    max-width: 94%; /* ensure images don't exceed container width */
+    height: auto; /* maintain aspect ratio */
+    /* margin: 3px; /* add spacing between images */
+    object-position: right; /* center the image */
+    float: right;
+    border-radius: 5px;
+}
+
+[class^="headshot"] {
+    border-radius: 50%; /* display image in a circle */
+    border: 3px solid #996600;
+    width: auto; 
+    height: 300px; 
+    object-fit: contain; /* maintain aspect ratio and fit within container */
+    object-fit: fill; /* maintain aspect ratio and cover container */
+    object-position: center; /* center the image */
+    min-width: 100%; /* set minimum width to fill container */
+    min-height: 100%; /* set minimum height to fill container */
+}
+
+[class^="logo"] {
+    width: auto; 
+    height: 25px; 
+    object-fit: contain; /* maintain aspect ratio and fit within container */
+    object-fit: fill; /* maintain aspect ratio and cover container */
+    object-position: top; /* center the image */
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+/* TITLE BANNERS */
+/* -------------------------------------------------------------------------------------------------------------- */
+
+.banner1 {
+    background-color: #996600; /* color for the banner */
+    color: white; /* color for the text */
+    border-radius: 10px;
+    padding: 10px; /* add padding to the banner */
+    text-align: left; /* left align text */
+    font-family: 'Helvetica', sans-serif
+}
+
+.banner2 {
+    background-color: #707070; /* color for the banner */
+    color: white; /* color for the text */
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 8px;
+    text-align: center; 
+    font-family: 'Helvetica', sans-serif
+}
+
+.banner3 {
+    background-color: #707070; /* color for the banner */
+    color: white; /* color for the text */
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 12px;
+    text-align: left; 
+    font-family: 'Helvetica', sans-serif
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+/* DROPDOWNS */
+/* -------------------------------------------------------------------------------------------------------------- */
+
+/* .btn {
+    background-color: black;
+    color: white;
+}
+
+.dropdown-toggle {
+    background-color: black;
+    color: white;
+} */
+
+.well {
+    align-items: right;
+    float: right;
+}
+/* -------------------------------------------------------------------------------------------------------------- */
+/* MAP-RELATED ITEMS */
+/* -------------------------------------------------------------------------------------------------------------- */
+
+#map1 {
+    /* position: relative;
+    width: 100%;
+    height: 700px;
+    float: center; */
+    border: 3px solid #996600;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#map2 {
+    /* position: relative;
+    width: 100%;
+    height: 700px;
+    float: center; */
+    border: 3px solid #996600;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 3px;
+}
+
+#map3 {
+    /* position: relative;
+    width: 100%;
+    height: 700px;
+    float: center; */
+    border: 3px solid #996600;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 3px;
+}
+
+#map4 {
+    /* position: relative;
+    width: 100%;
+    height: 700px;
+    float: center; */
+    border: 3px solid #996600;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 3px;
+}
+
+/* .leaflet-bottom.leaflet-left {
+    width: 100%;
+} */
+
+/* .leaflet-control-container .leaflet-timeline-controls {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 15px;
+} */
+
+.sedimentary-basins-layer {
+    fill: gray;
+    fill-opacity: 0.2;
+    stroke: gray;
+    stroke-width: 1;
+}
+
+#model_layer {
+    margin: 0;
+    margin-bottom: 0;
+    margin-top: 5px;
+    text-align: center;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+/* ABOUT US BANNER LINKS */
+/* -------------------------------------------------------------------------------------------------------------- */
+
+/* linkedin and github links in about section */
+#about {
+    color: white;
+}
+
+#about_blurb {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* -------------------------------------------------------------------------------------------------------------- */
+/* GLOSSARY THINGS */
+/* -------------------------------------------------------------------------------------------------------------- */
+
+.larger {
+    color: #996600;
+    font-size: 20px;
+    margin: 0;
+    margin-bottom: 0;
+}
+
+.gloss_desc {
+    margin: 0;
+}
+
+.row span {
+    padding-left: 10px; /* Adjust spacing between spans */
+}
