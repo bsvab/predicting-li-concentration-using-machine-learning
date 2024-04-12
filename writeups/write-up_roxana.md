@@ -20,12 +20,12 @@ A clustering analysis using the K-Means algorithm was conducted, revealing disti
 
 - **Spatial Clustering**: The latitude and longitude were used to identify six clusters, potentially indicating geochemical similarities based on location.
 
-![Distance Clustering Plot](/images/geomaps/distance_clustering_plot.png)
+![Distance Clustering Plot](../images/clustering/distance_clustering_plot.png)
 *Figure 1: Spatial clustering of well samples.*
 
 - **Geo-visualization**: A geographic map with clustered data points was created using Folium, offering insights into spatial patterns related to geochemical features.
 
-![Distance Cluster Map](/images/geomaps/distance_clustering_map.PNG)
+![Distance Cluster Map](../images/geomaps/distance_clustering_map.PNG)
 *Figure 2: Map visualization of clustered well samples.*
 
 ## Regression Analysis
