@@ -20,12 +20,12 @@ A clustering analysis using the K-Means algorithm was conducted, revealing disti
 
 - **Spatial Clustering**: The latitude and longitude were used to identify six clusters, potentially indicating geochemical similarities based on location.
 
-![Distance Clustering Plot](../images/clustering/distance_clustering_plot.png)
+![Distance Clustering Plot](/images/geomaps/distance_clustering_plot.png)
 *Figure 1: Spatial clustering of well samples.*
 
 - **Geo-visualization**: A geographic map with clustered data points was created using Folium, offering insights into spatial patterns related to geochemical features.
 
-![Distance Cluster Map](../images/geomaps/distance_clustering_map.PNG)
+![Distance Cluster Map](/images/geomaps/distance_clustering_map.PNG)
 *Figure 2: Map visualization of clustered well samples.*
 
 ## Regression Analysis
@@ -151,3 +151,72 @@ Principal Component Analysis (PCA) was applied to the geochemical data from each
 - **Biplot and Loadings Plot**: Highlights the dominance of geochemical indicators like Na and Cl.
 - **PCA Scatter Plot**: Shows a concentration of samples along the first component, suggestive of a key variance factor.
 - **Scree Plot**: The explained variance by each subsequent component drops markedly after the initial few components (three components).
+
+## Gradient Boosting for Lithium Concentration Prediction
+
+Following the PCA, we applied Gradient Boosting Regression to predict Lithium concentrations. This approach was chosen due to its robustness in handling nonlinear relationships and its ability to handle the variance explained by the principal components effectively.
+
+### Methodology
+
+We utilized the Gradient Boosting Regressor from scikit-learn, configured with 100 estimators, a learning rate of 0.1, and a maximum depth of 3. This configuration was selected to balance model complexity and training time, ensuring efficient learning without overfitting. Each basin's PCA-transformed dataset was split into training and testing subsets, with 20% reserved for testing to evaluate the model's performance.
+
+### Model Training and Evaluation
+
+For each basin, the model was trained on the known Lithium concentrations and evaluated using the Mean Squared Error (MSE), R-squared (R2), Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and Explained Variance. These metrics provide a comprehensive view of the model's accuracy and its ability to generalize to new data.
+
+- **MSE and RMSE** offer measures of the average error magnitude, with RMSE giving more weight to larger errors.
+- **MAE** provides a straightforward average of error magnitudes.
+- **R2** indicates the proportion of variance in the dependent variable predictable from the independent variables.
+- **Explained Variance** measures how well our model accounts for the variation in the dataset.
+
+### Results Visualization
+
+For each basin, predictions were visualized against actual values to assess the model's accuracy visually. These plots highlight the alignment between predicted and actual concentrations, with a perfect prediction falling along the diagonal line.
+
+Additionally, for basins where Lithium values were missing, the model provided predictions, which were saved and visualized in a histogram to understand the distribution of predicted values.
+
+ here are short interpretations for each basin:
+#### Anadarko Basin
+- The actual vs. predicted plot shows a concentration of predictions closely hugging the line of perfect agreement, indicating a model with a tight fit for most data points.
+- The distribution of predicted concentrations for new samples skews heavily towards lower concentrations, suggesting that Lithium-rich areas in this basin might be less common.
+#### Appalachian Basin
+- Predictions are generally in line with the actual values, with a spread indicating some variance in model accuracy.
+- Predicted values for new samples show a wide distribution, implying varied Lithium concentrations across the basin.
+#### Fort Worth Basin
+- A close match between actual and predicted values, with outliers potentially indicating unique geochemical scenarios or model limitations.
+- The distribution plot suggests most new samples are predicted to have low to moderate Lithium concentrations.
+#### Great Plains Basin
+- The actual vs. predicted values indicate a strong model performance for the majority of the data with some outliers.
+- New sample predictions show a multimodal distribution, hinting at different geochemical environments within the basin.
+#### Gulf Coast Basin
+- Actual vs. predicted concentrations are closely aligned, suggesting the model captures the basin's geochemistry well.
+- Predicted Lithium concentrations for new samples have a high frequency at lower concentrations, with a long tail towards higher values, indicating potential areas of high Lithium presence.
+#### Illinois Basin
+- Predictions align well with actual concentrations, though the model appears to slightly underestimate at higher Lithium concentrations.
+- New sample predictions are somewhat evenly distributed, with multiple peaks, possibly reflecting diverse geochemical conditions.
+#### Michigan Basin
+- The model seems to perform well for lower concentrations but shows some divergence at higher values.
+- Predicted new sample concentrations present a broad range, suggesting that while low Lithium concentrations are common, pockets of higher concentration exist.
+#### Oklahoma Platform Basin
+- The plot displays a good correlation between predicted and actual values with a minor spread.
+- Predicted Lithium concentration distribution indicates a higher frequency of moderate Lithium values, with fewer samples predicted to have very low or high concentrations.
+#### Pacific Basin
+- Actual vs. predicted Lithium concentrations show a tight grouping along the line of perfect prediction.
+- Distribution of predicted concentrations for new samples is multi-peaked, suggesting distinct geochemical zones within the basin.
+#### Permian Basin
+- There is a solid correlation for lower concentrations, with some deviation at higher values.
+- The predicted concentration distribution for new samples is highly left-skewed, indicating that higher Lithium concentrations are rare in this basin.
+#### Rocky Mountain Basin
+- For the Rocky Mountain Basin, the actual vs. predicted plot shows that the model predicts lower concentrations well but deviates at higher actual concentrations. 
+- The predicted distribution has a prominent peak at -lower concentrations, indicating a consistency in the predicted Lithium levels for most new samples.
+#### Williston Basin
+- The actual vs. predicted Lithium concentrations in the Williston Basin display a strong correlation along the diagonal, suggesting the model's predictions are reliable. 
+- The distribution of predicted values for new samples shows a strong peak at lower concentrations, tapering off for higher values, which might be representative of the prevalent Lithium distribution in this basin.
+
+These interpretations provide a quick snapshot of the model's performance and the nature of Lithium distribution in each basin, as per the provided plots. It's important to consider these alongside geochemical insights for a comprehensive understanding of the factors influencing Lithium levels in these regions.
+
+### Output Files
+
+All results, including the performance metrics and visualizations, were saved for further analysis:
+- Predicted versus actual concentration plots were saved in the designated plot directory.
+- Predicted concentrations for samples with initially unknown Lithium levels were saved in a separate directory for predicted data.
