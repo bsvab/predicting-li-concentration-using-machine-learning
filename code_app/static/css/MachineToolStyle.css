@@ -1,0 +1,45 @@
+/* styles.css */
+
+/* Orange banner */
+body {
+    background-color: orange;
+}
+
+/* Header style */
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    padding: 20px 0;
+    background-color: #333;
+}
+
+/* Input, Select, and Button style */
+input[type="file"],
+select,
+button {
+    display: block;
+    margin: 10px auto;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Results div style */
+#results {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+}
+

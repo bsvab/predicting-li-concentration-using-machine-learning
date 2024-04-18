@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Machine Learning Model Evaluation Tool</title>
+            <link rel="stylesheet" type="text/css" href="../static/css/MachineToolStyle.css"> 
+        </head>
+<body>
+    <h1>Machine Learning Model Evaluation Tool</h1>
+    <input type="file" id="csvFileInput" accept=".csv"><br><br>
+    <label for="modelSelect">Select a model:</label>
+    <select id="modelSelect">
+        <option value="RandomForestRegressor">Random Forest Regressor</option>
+        <!-- Add more model options here -->
+    </select><br><br>
+    <button onclick="runModel()">Run Model</button><br><br>
+    <div id="results"></div>
+
+    <script>
+        function runModel() {
+            // JavaScript function to run model remains unchanged
+        }
+    </script>
+</body>
+</html>
