@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Li Concentrations in the Gulf Coast Basin</title>
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <!-- AJAX library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- file source links to render via Flask app... -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/map5.css') }}">
+
+</head>
+<body>
+
+    <div id="map5"></div>
+    <!-- <div id="dateDropdownContainer"></div> Add a container for the dropdown -->
+    <div class="squareLayer"></div> <!-- Add the squares -->
+
+    <!-- map initialization file and layer files - file source links to render via Flask app... -->
+    <script src="{{ url_for('static', filename='js/map5.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/map5_li_actual_concentrations_layer.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/map5_li_predicted_concentrations_layer.js') }}"></script>
+    <!-- add additional layer js files here if needed... -->
+    
+</body>
+</html>
