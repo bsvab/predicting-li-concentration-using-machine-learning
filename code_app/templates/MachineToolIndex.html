@@ -1,22 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Machine Learning Model Evaluation Tool</title>
-            <link rel="stylesheet" type="text/css" href="../static/css/MachineToolStyle.css"> 
-        </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Model Evaluation Tool</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to your custom style.css -->
+    <link rel="stylesheet" href="../static/css/MachineToolStyle.css">
+</head>
 <body>
-    <h1>Machine Learning Model Evaluation Tool</h1>
-    <input type="file" id="csvFileInput" accept=".csv"><br><br>
-    <label for="modelSelect">Select a model:</label>
-    <select id="modelSelect">
-        <option value="RandomForestRegressor">Random Forest Regressor</option>
-        <!-- Add more model options here -->
-    </select><br><br>
-    <button onclick="runModel()">Run Model</button><br><br>
-    <div id="results"></div>
+    <!-- Orange banner -->
+    <div class="banner1">
+        <h1>Machine Learning Model Evaluation Tool</h1>
+    </div>
 
+    <!-- Bootstrap container for content -->
+    <div class="container">
+        <!-- Bootstrap row -->
+        <div class="row">
+            <!-- First column (full width) -->
+            <div class="col-md-12">
+                <input type="file" id="csvFileInput" accept=".csv"><br><br>
+                <label for="modelSelect">Select a model:</label>
+                <select id="modelSelect">
+                    <option value="RandomForestRegressor">Random Forest Regressor</option>
+                    <!-- Add more model options here -->
+                </select><br><br>
+                <button onclick="runModel()">Run Model</button><br><br>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results div -->
+    <div id="results" class="container">
+        <!-- Results content goes here -->
+    </div>
+
+    <!-- Bootstrap JavaScript libraries (optional, if needed) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- JavaScript function to run model remains unchanged -->
     <script>
         function runModel() {
             // JavaScript function to run model remains unchanged
