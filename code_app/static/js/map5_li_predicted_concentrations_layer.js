@@ -1,3 +1,0 @@
-// Create and load the model-predicted lithium concentrations layer to map5
-
-// code all the things here...
