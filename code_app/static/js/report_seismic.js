@@ -79,7 +79,7 @@ function insertHTML() {
         <h3 style="color:#707070" id="23-data-flow-big-picture">2.3 Data Flow Big Picture</h3>
         <p>The below flowchart outlines the overall data flow for a multi-tab application that integrates TexNet's seismic data and injection volumes with pressure data from a CMG model (output in .txt format). It features two APIs provided by TexNet, one for injection volumes and another for seismicity data. The data from these sources is consolidated into a PostgreSQL database on AWS Cloud. A Flask application, utilizing HTML, CSS, and JavaScript, serves this data on a multi-tab dashboard, providing a comprehensive and interactive view of the data.</p>
 
-        <img src="{{ url_for('static', filename='images/report_seismic/project3_flowchart.png') }}" alt="flowchart">
+        <img src="${flowchart}" alt="flowchart">
 
         <h3 style="color:#707070" id="24-visualizations">2.4 Visualizations</h3>
         <p>The methodology for incorporating seismic, injection, and pressure data into our interactive geomap involves several integral steps, leveraging both the front-end capabilities provided through the web application and the back-end functionalities enabled by our Flask app:</p>
