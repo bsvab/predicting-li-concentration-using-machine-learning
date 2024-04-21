@@ -4,6 +4,8 @@ from flask import Flask, jsonify, render_template, url_for, send_from_directory
 import psycopg2
 import psycopg2.extras
 import pandas as pd
+import geopandas as gpd
+from shapely.geometry import Point
 
 from config import PGEND_POINT
 from config import PGDATABASE_NAME
@@ -377,6 +379,29 @@ def pressure_data_19():
         return jsonify(geojson)
     except Exception as e:
         return jsonify({'error': str(e)})
+    
+
+
+@app.route('/api/actual_li')
+def actual_li():
+    try:
+        df = pd.read_csv('../data/df_output/df_cleaned.csv')
+        df = df[df['BASIN_CATEGORY'] == 'Gulf Coast']#[['LONGITUDE', 'LATITUDE', 'Li', 'TDS', 'FORMSIMPLE']]
+        gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df['LONGITUDE'], df['LATITUDE']))
+        return gdf.to_json()
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/predicted_li/<model_name>')  
+def predicted_li(model_name):
+    file_path = f'../data/predicted_data/multi_target_sequential_chaining/{model_name}_gulf_coast_data_with_predicted_Li.csv'
+    try:
+        predicted_df = pd.read_csv(file_path)
+        #predicted_df = predicted_df[['LONGITUDE', 'LATITUDE', 'Li_predicted','TDS', 'FORMSIMPLE']]
+        gdf = gpd.GeoDataFrame(predicted_df, geometry=gpd.points_from_xy(predicted_df['LONGITUDE'], predicted_df['LATITUDE']))
+        return gdf.to_json()
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
