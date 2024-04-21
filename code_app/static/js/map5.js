@@ -15,7 +15,7 @@ let topoTiles = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', 
 osmTiles.addTo(map5);
 
 let actualLiLayer = L.layerGroup().addTo(map5);
-let predicted_li_XGB = L.layerGroup();
+let predicted_li_XGB = L.layerGroup().addTo(map5);
 let predicted_li_SVR = L.layerGroup();
 let predicted_li_RF = L.layerGroup();
 let predicted_li_MLP = L.layerGroup();
