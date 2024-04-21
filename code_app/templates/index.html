@@ -470,6 +470,98 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Containers for Plots -->
+                <div class="container-fluid">
+
+                    <!-- Performance Plots -->
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="container-fluid banner2">
+                                <h6>Gradient Boosting</h6>
+                            </div>
+                            <img id="imgElement_Performance_GB" src="{{ url_for('static', filename='images/li_plots/gradient_boosting_performance_comparison.png') }}" alt="GB_Performance_Plot">
+                        </div>
+                        <div class="col-md-3">
+                            <div class="container-fluid banner2">
+                                <h6>K Nearest Neighbors (KNN)</h6>
+                            </div>
+                            <img id="imgElement_Performance_KNN" src="{{ url_for('static', filename='images/li_plots/knn_performance_comparison.png') }}" alt="KNN_Performance_Plot">
+                        </div>
+                        <div class="col-md-3">
+                            <div class="container-fluid banner2">
+                                <h6>SVR</h6>
+                            </div>
+                            <img id="imgElement_Performance_SVR" src="{{ url_for('static', filename='images/li_plots/svr_performance_comparison.png') }}" alt="SVR_Performance_Plot">
+                        </div>
+                        <div class="col-md-3">
+                            <div class="container-fluid banner2">
+                                <h6>Random Forest</h6>
+                            </div>
+                            <img id="imgElement_Performance_RF" src="{{ url_for('static', filename='images/li_plots/random_forest_performance_comparison.png') }}" alt="RF_Performance_Plot">
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                        <div class="col-md-12">
+                            <p> </p>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="container-fluid banner2">
+                                <h6>Neural Network</h6>
+                            </div>
+                            <img id="imgElement_Performance_NN" src="{{ url_for('static', filename='images/li_plots/neural_network_performance_comparison.png') }}" alt="NN_Performance_Plot">
+                        </div>
+                        <div class="col-md-3">
+                            <div class="container-fluid banner2">
+                                <h6>MTSC</h6>
+                            </div>
+                            <img id="imgElement_Performance_MTSC" src="{{ url_for('static', filename='images/li_plots/mtsc_performance_comparison.png') }}" alt="MTSC_Performance_Plot">
+                        </div>
+                        <div class="col-md-3">
+                            <div class="container-fluid banner2">
+                                <h6>...</h6>
+                            </div>
+                            ...
+                        </div>
+                        <div class="col-md-3">
+                            <div class="container-fluid banner2">
+                                <h6>...</h6>
+                            </div>
+                            ...
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                        <div class="col-md-12">
+                            <p> </p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Within 15% Plots -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="container-fluid banner2">
+                                <h6>Predicted Values Within 15% of Actuals Plots</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="row">
+                        <div class="col-md-4">
+                            <img id="imgElement_Piper(Triangle)" src="" alt="Piper(Triangle)">
+                        </div>
+                        <div class="col-md-4">
+                            <img id="imgElement_Piper(Contour)" src="" alt="Piper(Contour)">
+                        </div>
+                        <div class="col-md-4">
+                            <img id="imgElement_Piper(Color)" src="" alt="Piper(Color)">
+                        </div>
+                    </div> -->
+                </div>
 
                 <!-- Containers for Visuals -->
                 <div class="container-fluid">

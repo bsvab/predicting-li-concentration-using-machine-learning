@@ -89,6 +89,15 @@ body {
 /* IMAGES */
 /* -------------------------------------------------------------------------------------------------------------- */
 
+.container [id^="imgElement_Performance"] {
+    max-width: 98%; /* ensure images don't exceed container width */
+    height: auto; /* maintain aspect ratio */
+    margin: 3px; /* add spacing between images */
+    object-position: center; /* center the image */
+    float: center;
+    border-radius: 5px;
+}
+
 .container [id^="imgElement_BoxPlot"] {
     max-width: 47%; /* ensure images don't exceed container width */
     height: auto; /* maintain aspect ratio */
