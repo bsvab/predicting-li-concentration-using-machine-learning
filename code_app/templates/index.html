@@ -490,7 +490,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="container-fluid banner2">
-                                <h6>SVR</h6>
+                                <h6>Support Vector Regression (SVR)</h6>
                             </div>
                             <img id="imgElement_Performance_SVR" src="{{ url_for('static', filename='images/li_plots/svr_performance_comparison.png') }}" alt="SVR_Performance_Plot">
                         </div>
@@ -536,9 +536,9 @@
                     </div>
                     <div class="container-fluid">
                         <div class="row">
-                        <div class="col-md-12">
-                            <p> </p>
-                        </div>
+                            <div class="col-md-12">
+                                <p> </p>
+                            </div>
                         </div>
                     </div>
 
@@ -546,21 +546,108 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="container-fluid banner2">
-                                <h6>Predicted Values Within 15% of Actuals Plots</h6>
+                                <h6>Plots of Predicted Values Within 15% of Actuals Plots for All Methods for the Gulf Coast Basin</h6>
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="row">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p> </p>
+                        </div>
+                    </div>
+                
+                    <!-- Header Row -->
+                    <div class="row">
+                        <div class="col-md-2">
+                            <!-- empty top left corner -->
+                        </div>
+                        <div class="col-md-2">
+                            <div class="container-fluid banner2">
+                                <h6>Gradient Boosting</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="container-fluid banner2">
+                                <h6>K Nearest Neighbors (KNN)</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="container-fluid banner2">
+                                <h6>Support Vector Regression (SVR)</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="container-fluid banner2">
+                                <h6>Random Forest</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="container-fluid banner2">
+                                <h6>Neural Network</h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- With PCA Plot Row -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="container-fluid banner2">
+                                <h6>With PCA</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- <div class="col-md-2">
+                            <div class="container-fluid banner2">
+                                <h6>With PCA</h6>
+                            </div>
+                        </div> -->
+                        <div class="col-md-2">
+                            <img id="imgElement_15Percent_GB" src="{{ url_for('static', filename='images/li_plots/Gulf_Coast_actual_predicted_gradient_boosting_pca.png') }}" alt="Within15%Plot">
+                        </div>
+                        <div class="col-md-2">
+                            <img id="imgElement_15Percent_KNN" src="{{ url_for('static', filename='images/li_plots/GulfCoast_actual_vs_predicted_knn_pca.png') }}" alt="Within15%Plot">
+                        </div>
+                        <div class="col-md-2">
+                            <img id="imgElement_15Percent_SVR" src="{{ url_for('static', filename='images/li_plots/GulfCoast_actual_vs_predicted_svr_pca.png') }}" alt="Within15%Plot">
+                        </div>
+                        <div class="col-md-2">
+                            <img id="imgElement_15Percent_RF" src="{{ url_for('static', filename='images/li_plots/Gulf_Coast_actual_predicted_random_forest_pca.png') }}" alt="Within15%Plot">
+                        </div>
+                        <div class="col-md-2">
+                            <img id="imgElement_15Percent_NN" src="{{ url_for('static', filename='images/li_plots/Gulf_Coast_actual_predicted_neural_network_pca.png') }}" alt="Within15%Plot">
+                        </div>
+                    </div>
+                    <!-- Without PCA Plot Row -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="container-fluid banner2">
+                                <h6>Without PCA</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- <div class="col-md-2">
+                            <div class="container-fluid banner2">
+                                <h6>Without PCA</h6>
+                            </div>
+                        </div> -->
                         <div class="col-md-4">
-                            <img id="imgElement_Piper(Triangle)" src="" alt="Piper(Triangle)">
+                            <img id="imgElement_15Percent_GB" src="{{ url_for('static', filename='images/li_plots/Gulf_Coast_actual_predicted_gradient_boosting_no_pca.png') }}" alt="Within15%Plot">
                         </div>
                         <div class="col-md-4">
-                            <img id="imgElement_Piper(Contour)" src="" alt="Piper(Contour)">
+                            <img id="imgElement_15Percent_KNN" src="{{ url_for('static', filename='images/li_plots/GulfCoast_actual_vs_predicted_knn_no_pca.png') }}" alt="Within15%Plot">
                         </div>
                         <div class="col-md-4">
-                            <img id="imgElement_Piper(Color)" src="" alt="Piper(Color)">
+                            <img id="imgElement_15Percent_SVR" src="{{ url_for('static', filename='images/li_plots/GulfCoast_actual_vs_predicted_svr_no_pca.png') }}" alt="Within15%Plot">
                         </div>
-                    </div> -->
+                        <div class="col-md-4">
+                            <img id="imgElement_15Percent_RF" src="{{ url_for('static', filename='images/li_plots/Gulf_Coast_actual_predicted_random_forest_no_pca.png') }}" alt="Within15%Plot">
+                        </div>
+                        <div class="col-md-4">
+                            <img id="imgElement_15Percent_NN" src="{{ url_for('static', filename='images/li_plots/Gulf_Coast_actual_predicted_neural_network_no_pca.png') }}" alt="Within15%Plot">
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Containers for Visuals -->
