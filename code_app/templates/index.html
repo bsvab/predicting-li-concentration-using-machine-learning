@@ -691,27 +691,24 @@
                     </div>
                     <div class="row">
                         <div class="col-md-5">
-                            <p> </p>
+                            <p>The below table summarizes the key parameter options provided to the respective models and the final performace metrics of the lithium concentration predictions for each model.</p>
                         </div>
                         <div class="col-md-7">
-                            <p>Toggle the lithium concentration data sets on and off using the selections in the top right corner of the map below to view the predicted values to see which model(s) compare best with the actual data.</p>
+                            <p>Toggle the lithium concentration data sets on and off using the check boxes in the top right corner of the map below to view the predicted values to see which model(s) compare best with the actual data.</p>
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-12">
                             <p> </p>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="row">
                         <div class="col-md-5">
-                            <div class="row">
-                                <img id="imgElement_Table" src="{{ url_for('static', filename='images/li_plots/MTSC_table.png') }}" alt="Table">
-                            </div>
-                            <div class="row">
-                                MSE = Mean Squared Error <br>
-                                MAE = Mean Absolute Error <br>
-                                R2 = Coefficient of Determination <br>
-                            </div>
+                            <img id="imgElement_Table" src="{{ url_for('static', filename='images/li_plots/MTSC_table_for_bootstrap.png') }}" alt="Table">
+                            <br>
+                            &nbsp;&nbsp;MSE = Mean Squared Error <br>
+                            &nbsp;&nbsp;MAE = Mean Absolute Error <br>
+                            &nbsp;&nbsp;R2 = Coefficient of Determination <br>
                         </div>
                         <div class="col-md-7">
                             <iframe id="map5" src="{{ url_for('map5') }}" height="650" width=100% title="map1"></iframe>

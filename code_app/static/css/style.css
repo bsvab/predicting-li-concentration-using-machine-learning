@@ -112,16 +112,28 @@ body {
     border-radius: 5px;
 }
 
-.container [id^="imgElement_Table"] {
-    object-fit: contain; /* maintain aspect ratio and fit within container */
-    object-fit: fill; /* maintain aspect ratio and cover container */
-    max-width: 100%; /* ensure images don't exceed container width */
-    height: auto; /* maintain aspect ratio */
-    margin: 3px; /* add spacing between images */
-    object-position: center; /* center the image */
-    float: center;
-    border-radius: 5px;
+/* .container [id^="imgElement_Table"] { */
+    /* object-fit: contain; maintain aspect ratio and fit within container */
+    /* object-fit: fill; maintain aspect ratio and cover container */
+    /* max-width: 100%; ensure images don't exceed container width */
+    /* height: auto; maintain aspect ratio */
+    /* margin: 3px; add spacing between images */
+    /* object-position: center; center the image */
+    /* float: center; */
+    /* border: 3px solid #996600; */
+    /* border-radius: 8px; */
+/* } */
+
+.container #imgElement_Table {
+    width: 100%; /* Ensure the image fills the width of the column */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: contain; /* Maintain aspect ratio and fit within container */
+    border: 3px solid #996600;
+    border-radius: 6px;
+    display: block; /* Ensure the image is displayed as a block element */
+    margin: 3px auto; /* Add spacing between images and center horizontally */
 }
+
 
 .container [id^="imgElement_BoxPlot"] {
     max-width: 47%; /* ensure images don't exceed container width */
