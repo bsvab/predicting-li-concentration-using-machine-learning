@@ -32,9 +32,9 @@ let overlayMaps = {
     "Actual Li": actualLiLayer,
     "Predicted Li by SVR": predicted_li_SVR,
     "Predicted Li by XGB": predicted_li_XGB,
-    "Predited Li by RF":predicted_li_RF,
-    "Predited Li by MLP":predicted_li_MLP,
-    "Predited Li by GB":predicted_li_GB
+    "Predicted Li by RF":predicted_li_RF,
+    "Predicted Li by MLP":predicted_li_MLP,
+    "Predicted Li by GB":predicted_li_GB
 
 };
 // Add layer control to the map
