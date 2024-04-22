@@ -1,5 +1,5 @@
 // Initialize the map
-let map5 = L.map('map5').setView([29.7633, -95.3633], 6); 
+let map5 = L.map('map5').setView([30.085900, -94.099043], 6.4);     // Houston [29.7633, -95.3633], Beaumont [30.085900, -94.099043]
 
 //Define OpenStreetMap tiles
 let osmTiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
