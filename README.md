@@ -4,14 +4,15 @@
 
 [1. Introduction](#1-introduction)  
 [2. Data Preparation](#2-data-preparation)  
-[3. Imputation Strategy](#3-imputation-strategy)  
-[4. Heatmap Analysis](#4-heatmap-analysis)  
-[5. Pricipal Component Analysis (PCA)](#5-principal-component-analysis-pca)  
-[6. Predictive Modeling](#6-predictive-modeling)  
-[7. Conclusion](#7-conclusion)  
-[8. Technologies](#8-technologies)  
-[9. Data Sources](#9-data-sources)  
-[10. Contributors](#10-contributors)
+[3. Amazon RDS](#3-amazon-rds)  
+[4. Imputation Strategy](#4-imputation-strategy)  
+[5. Heatmap Analysis](#5-heatmap-analysis)  
+[6. Principal Component Analysis (PCA)](#6-principal-component-analysis-pca)  
+[7. Predictive Modeling](#7-predictive-modeling)  
+[8. Conclusion](#8-conclusion)  
+[9. Technologies](#9-technologies)  
+[10. Data Sources](#10-data-sources)  
+[11. Contributors](#11-contributors)
 
 
 ## <p style="color:#996600">1. Introduction</p>
@@ -29,12 +30,19 @@ The raw dataset was subjected to several preprocessing steps to ensure its readi
 - See the below table with the statistical info for the data after general and technical cleaning. 
 
   ![Cleaned Data Info](images/readme/data_info_table.png)
+
+## <p style="color:#996600">3. Amazon RDS</p>
+The platform selected for our database management is Amazon Relational Database Service (Amazon RDS), which was determined to be optimally suited for handling our extensive datasets. Following the successful establishment of the database, we employed the Psycopg2 and SQLAlchemy libraries within Python to facilitate data loading procedures. The initial step involved the configuration of a connection between pgAdmin and Amazon RDS. Subsequent to this, we proceeded to create distinct tables corresponding to each dataset.The data, originally stored in CSV files, was imported into Pandas DataFrames. Finally, we systematically uploaded the data from each DataFrame into the appropriate tables in Amazon RDS.This structured data was subsequently retrieved from the database for use in various machine learning models and for the creation of our dashboard.
+
+For a visual representation of this process, please refer to the flowchart below.
+
+  ![Flowchart](/images/readme/flowchart.png)
 <br>
 
-## <p style="color:#996600">3. Imputation Strategy</p>
+## <p style="color:#996600">4. Imputation Strategy</p>
   For geochemical datasets, where the variables often exhibit complex interdependencies, simplistic imputation methods such as substitution by mean, median, or extremities like minimum and maximum values may not adequately capture the intrinsic variability and can potentially introduce biases. To address the missing data in our dataset, we utilized an Iterative Imputer, employing a RandomForestRegressor as the estimator. This advanced imputation technique considers the entire variable distribution and the stochastic nature of the dataset, thereby preserving the inherent multivariate relationships among geochemical parameters. It is especially critical in PCA, which requires a complete dataset as missing values can significantly distort the principal components derived from the analysis. PCA is discussed further below.
 
-## <p style="color:#996600">4. Heatmap Analysis</p>
+## <p style="color:#996600">5. Heatmap Analysis</p>
 Through heatmap analysis, we have examined the correlations between Lithium (Li) concentrations and various geochemical parameters across multiple basins. The following section elucidates the distinct geochemical signatures observed in each basin and discusses the implications of these findings for predicting Lithium concentrations.
 
 ### <p style="color:gray">Basin-Specific Correlations with Lithium</p>
@@ -69,7 +77,7 @@ The disparities in geochemical correlations with Lithium across basins underscor
 
 In other basins, such as the Rocky Mountain, the correlations are less pronounced, which may necessitate a more nuanced approach to modeling that incorporates a broader array of features or perhaps the development of basin-specific prediction models.
 
-## <p style="color:#996600">5. Principal Component Analysis (PCA)</p>
+## <p style="color:#996600">6. Principal Component Analysis (PCA)</p>
 Principal Component Analysis (PCA) was applied to the geochemical data from each basin separately. The findings from this dimensionality reduction technique provided insights into the underlying data structure and the interrelations among geochemical variables, as summarized below for each basin:
 
 ### <p style="color:gray">Anadarko Basin</p>
@@ -156,7 +164,7 @@ Principal Component Analysis (PCA) was applied to the geochemical data from each
 - **Scree Plot**: The explained variance by each subsequent component drops markedly after the initial few components.
 <br>
 
-## <p style="color:#996600">6. Predictive Modeling</p>
+## <p style="color:#996600">7. Predictive Modeling</p>
 
 ### <p style="color:gray">Input Data Scenarios</p>
 We employed the machine learning models across two scenarios:
@@ -327,7 +335,7 @@ The geoplot shown below displays both the known and the predicted lithium concen
   ![GeoMap](images/readme/MTSC_geomap.png)
 <br>
 
-## <p style="color:#996600">7. Conclusion</p>
+## <p style="color:#996600">8. Conclusion</p>
 This study on geochemical data analysis and Lithium concentration prediction has leveraged a multifaceted machine learning approach to uncover and exploit the subtle nuances within produced water samples from various geological basins across the United States. By employing advanced statistical and machine learning techniques, including Principal Component Analysis (PCA) and sophisticated imputation methods, we have systematically enhanced our understanding and predictive capabilities concerning Lithium concentrations, a critical component in contemporary energy production and battery storage.
 
 The deployment of various models such as Gradient Boosting, Random Forest, Neural Networks, SVR, and KNN provided a robust framework to tackle the prediction tasks across different scenarios—one with imputed missing values and another using PCA-transformed data. These models were carefully tuned to address the unique characteristics of each basin, with an emphasis on capturing the intricate relationships within the geochemical parameters. 
@@ -338,7 +346,7 @@ The use of multi-target sequential chaining in the Gulf Coast Basin exemplifies 
 
 The project has not only demonstrated the feasibility of using advanced machine learning techniques to predict Lithium concentrations in produced water but also highlighted the potential for these methodologies to revolutionize how industries related to energy production and environmental management operate. By turning intricate geochemical data into actionable insights, this research paves the way for more informed decision-making and strategic resource management in the energy sector. 
 
-## <p style="color:#996600">8. Technologies</p> 
+## <p style="color:#996600">9. Technologies</p> 
 
 - Languages 
     - [Python 3.10 or higher](https://www.python.org/)
@@ -373,13 +381,13 @@ The project has not only demonstrated the feasibility of using advanced machine 
     - [Amazon Web Services RDS](https://aws.amazon.com/rds/)
 
 
-## <p style="color:#996600">9. Data Sources</p> 
+## <p style="color:#996600">10. Data Sources</p> 
 - CMG Model Output
 - [TexNet Seismic Data](https://www.beg.utexas.edu/texnet-cisr/texnet)
 - [Injection Data API](https://injection.texnet.beg.utexas.edu/api/Export)
 - [USGS Produced Water Data](https://www.usgs.gov/)
 
-## <p style="color:#996600">10. Contributors</p> 
+## <p style="color:#996600">11. Contributors</p> 
 
 - [Roxana Darvari](https://github.com/roxanadrv)
 - [Brittany Svab](https://github.com/bsvab)
