@@ -129,7 +129,7 @@ body {
     height: auto; /* Maintain aspect ratio */
     object-fit: contain; /* Maintain aspect ratio and fit within container */
     border: 3px solid #996600;
-    border-radius: 6px;
+    border-radius: 5px;
     display: block; /* Ensure the image is displayed as a block element */
     margin: 3px auto; /* Add spacing between images and center horizontally */
 }
