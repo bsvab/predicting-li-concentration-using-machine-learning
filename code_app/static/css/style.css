@@ -85,12 +85,17 @@ body {
     margin-right: 5px;
 }
 
+.custom-col {
+    /* Adjusting width to simulate col-md-2.4 */
+    width: 20%;
+}
+
 /* -------------------------------------------------------------------------------------------------------------- */
 /* IMAGES */
 /* -------------------------------------------------------------------------------------------------------------- */
 
 .container [id^="imgElement_Performance"] {
-    max-width: 98%; /* ensure images don't exceed container width */
+    max-width: 100%; /* ensure images don't exceed container width */
     height: auto; /* maintain aspect ratio */
     margin: 3px; /* add spacing between images */
     object-position: center; /* center the image */
@@ -99,6 +104,17 @@ body {
 }
 
 .container [id^="imgElement_15Percent"] {
+    max-width: 100%; /* ensure images don't exceed container width */
+    height: auto; /* maintain aspect ratio */
+    margin: 3px; /* add spacing between images */
+    object-position: center; /* center the image */
+    float: center;
+    border-radius: 5px;
+}
+
+.container [id^="imgElement_Table"] {
+    object-fit: contain; /* maintain aspect ratio and fit within container */
+    object-fit: fill; /* maintain aspect ratio and cover container */
     max-width: 100%; /* ensure images don't exceed container width */
     height: auto; /* maintain aspect ratio */
     margin: 3px; /* add spacing between images */
@@ -189,8 +205,8 @@ body {
     background-color: #707070; /* color for the banner */
     color: white; /* color for the text */
     border-radius: 10px;
-    padding-top: 15px;
-    padding-bottom: 8px;
+    padding-top: 12px;
+    padding-bottom: 5px;
     text-align: center; 
     font-family: 'Helvetica', sans-serif
 }
@@ -201,6 +217,16 @@ body {
     border-radius: 10px;
     padding-top: 10px;
     padding-bottom: 12px;
+    text-align: left; 
+    font-family: 'Helvetica', sans-serif
+}
+
+.banner4 {
+    background-color: #996600; /* color for the banner */
+    color: white; /* color for the text */
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 8px;
     text-align: left; 
     font-family: 'Helvetica', sans-serif
 }

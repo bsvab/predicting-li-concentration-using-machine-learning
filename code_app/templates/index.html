@@ -59,7 +59,7 @@
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="nav-li-tab">
                         <a class="dropdown-item" href="#nav-li_visualizations">Visualizations</a>
                         <a class="dropdown-item" href="#nav-li_report">Detailed Report</a>
-                        <a class="dropdown-item" href="#nav-li_tool">ML Model Tester Tool</a>
+                        <!-- <a class="dropdown-item" href="#nav-li_tool">ML Model Tester Tool</a> -->
                         <!-- Add more dropdown items here if needed -->
                     </div>
                 </div>
@@ -437,68 +437,56 @@
             <!-- Visualizations Dropdown Content -->
             <div class="tab-pane fade" id="nav-li_visualizations" role="tabpanel">
                             
-                <!-- Banner Title Section & Dropdown -->
-                <div class="container-fluid banner1">
-                    <h3>Visualization of Predicted Lithium Concentrations with Machine Learning for the Gulf Coast Basin</h3>
+                <!-- Banner Title Section -->
+                <!-- <div class="container-fluid banner1">
+                    <h3>Visualization of Predicted Lithium Concentrations with Machine Learning</h3>
                     <div class="row">
                         <div class="col-md-10">
                             <h6><em>Content goes here...</em></h6>
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p> </p>
+                    </div>
+                </div> -->
 
                 <!-- Content Section -->
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p> </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>Select a [INSERT THING] from the dropdown in the top right corner of the map below to view the [SOMETHING].</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <iframe id="map5" src="{{ url_for('map5') }}" height="650" width=100% title="map1"></iframe>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p> </p>
-                        </div>
-                    </div>
-                </div>
-                
                 <!-- Containers for Plots -->
                 <div class="container-fluid">
 
                     <!-- Performance Plots -->
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-12">
+                            <div class="container-fluid banner4">
+                                <h3>Plots of Performance Metrics for Each Method for Each Basin</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p> </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
                             <div class="container-fluid banner2">
                                 <h6>Gradient Boosting</h6>
                             </div>
                             <img id="imgElement_Performance_GB" src="{{ url_for('static', filename='images/li_plots/gradient_boosting_performance_comparison.png') }}" alt="GB_Performance_Plot">
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="container-fluid banner2">
                                 <h6>K Nearest Neighbors (KNN)</h6>
                             </div>
                             <img id="imgElement_Performance_KNN" src="{{ url_for('static', filename='images/li_plots/knn_performance_comparison.png') }}" alt="KNN_Performance_Plot">
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="container-fluid banner2">
                                 <h6>Support Vector Regression (SVR)</h6>
                             </div>
                             <img id="imgElement_Performance_SVR" src="{{ url_for('static', filename='images/li_plots/svr_performance_comparison.png') }}" alt="SVR_Performance_Plot">
-                        </div>
-                        <div class="col-md-3">
-                            <div class="container-fluid banner2">
-                                <h6>Random Forest</h6>
-                            </div>
-                            <img id="imgElement_Performance_RF" src="{{ url_for('static', filename='images/li_plots/random_forest_performance_comparison.png') }}" alt="RF_Performance_Plot">
                         </div>
                     </div>
                     <div class="container-fluid">
@@ -509,29 +497,20 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
+                            <div class="container-fluid banner2">
+                                <h6>Random Forest</h6>
+                            </div>
+                            <img id="imgElement_Performance_RF" src="{{ url_for('static', filename='images/li_plots/random_forest_performance_comparison.png') }}" alt="RF_Performance_Plot">
+                        </div>
+                        <div class="col-md-4">
                             <div class="container-fluid banner2">
                                 <h6>Neural Network</h6>
                             </div>
                             <img id="imgElement_Performance_NN" src="{{ url_for('static', filename='images/li_plots/neural_network_performance_comparison.png') }}" alt="NN_Performance_Plot">
                         </div>
-                        <div class="col-md-3">
-                            <div class="container-fluid banner2">
-                                <h6>MTSC</h6>
-                            </div>
-                            <img id="imgElement_Performance_MTSC" src="{{ url_for('static', filename='images/li_plots/mtsc_performance_comparison.png') }}" alt="MTSC_Performance_Plot">
-                        </div>
-                        <div class="col-md-3">
-                            <div class="container-fluid banner2">
-                                <h6>...</h6>
-                            </div>
-                            ...
-                        </div>
-                        <div class="col-md-3">
-                            <div class="container-fluid banner2">
-                                <h6>...</h6>
-                            </div>
-                            ...
+                        <div class="col-md-4">
+                            <!-- empty spot -->
                         </div>
                     </div>
                     <div class="container-fluid">
@@ -543,10 +522,11 @@
                     </div>
 
                     <!-- Within 15% Plots -->
+                    <!-- With PCA Banner -->
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="container-fluid banner2">
-                                <h6>Plots of Predicted Values Within 15% of Actuals Plots for All Methods for the Gulf Coast Basin</h6>
+                            <div class="container-fluid banner4">
+                                <h3>Plots of Predicted Values Within 15% of Actuals for Each Method for the Gulf Coast Basin | With PCA</h3>
                             </div>
                         </div>
                     </div>
@@ -555,105 +535,196 @@
                             <p> </p>
                         </div>
                     </div>
-                
                     <!-- Header Row -->
                     <div class="row">
-                        <div class="col-md-2">
-                            <!-- empty top left corner -->
-                        </div>
-                        <div class="col-md-2">
+                        <div class="col custom-col">
                             <div class="container-fluid banner2">
                                 <h6>Gradient Boosting</h6>
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col custom-col">
                             <div class="container-fluid banner2">
                                 <h6>K Nearest Neighbors (KNN)</h6>
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col custom-col">
                             <div class="container-fluid banner2">
                                 <h6>Support Vector Regression (SVR)</h6>
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col custom-col">
                             <div class="container-fluid banner2">
                                 <h6>Random Forest</h6>
                             </div>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col custom-col">
                             <div class="container-fluid banner2">
                                 <h6>Neural Network</h6>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- With PCA Plot Row -->
+                    <!-- Plot Row -->
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="container-fluid banner2">
-                                <h6>With PCA</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <!-- <div class="col-md-2">
-                            <div class="container-fluid banner2">
-                                <h6>With PCA</h6>
-                            </div>
-                        </div> -->
-                        <div class="col-md-2">
+                        <div class="col custom-col">
                             <img id="imgElement_15Percent_GB" src="{{ url_for('static', filename='images/li_plots/Gulf_Coast_actual_predicted_gradient_boosting_pca.png') }}" alt="Within15%Plot">
                         </div>
-                        <div class="col-md-2">
+                        <div class="col custom-col">
                             <img id="imgElement_15Percent_KNN" src="{{ url_for('static', filename='images/li_plots/GulfCoast_actual_vs_predicted_knn_pca.png') }}" alt="Within15%Plot">
                         </div>
-                        <div class="col-md-2">
+                        <div class="col custom-col">
                             <img id="imgElement_15Percent_SVR" src="{{ url_for('static', filename='images/li_plots/GulfCoast_actual_vs_predicted_svr_pca.png') }}" alt="Within15%Plot">
                         </div>
-                        <div class="col-md-2">
+                        <div class="col custom-col">
                             <img id="imgElement_15Percent_RF" src="{{ url_for('static', filename='images/li_plots/Gulf_Coast_actual_predicted_random_forest_pca.png') }}" alt="Within15%Plot">
                         </div>
-                        <div class="col-md-2">
+                        <div class="col custom-col">
                             <img id="imgElement_15Percent_NN" src="{{ url_for('static', filename='images/li_plots/Gulf_Coast_actual_predicted_neural_network_pca.png') }}" alt="Within15%Plot">
                         </div>
                     </div>
-                    <!-- Without PCA Plot Row -->
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="container-fluid banner2">
-                                <h6>Without PCA</h6>
+                            <p> </p>
+                        </div>
+                    </div>
+
+                    <!-- Without PCA Banner -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="container-fluid banner4">
+                                <h3>Plots of Predicted Values Within 15% of Actuals for Each Method for the Gulf Coast Basin | Without PCA</h3>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <!-- <div class="col-md-2">
+                        <div class="col-md-12">
+                            <p> </p>
+                        </div>
+                    </div>
+                    <!-- Header Row -->
+                    <div class="row">
+                        <div class="col custom-col">
                             <div class="container-fluid banner2">
-                                <h6>Without PCA</h6>
+                                <h6>Gradient Boosting</h6>
                             </div>
-                        </div> -->
-                        <div class="col-md-4">
+                        </div>
+                        <div class="col custom-col">
+                            <div class="container-fluid banner2">
+                                <h6>K Nearest Neighbors (KNN)</h6>
+                            </div>
+                        </div>
+                        <div class="col custom-col">
+                            <div class="container-fluid banner2">
+                                <h6>Support Vector Regression (SVR)</h6>
+                            </div>
+                        </div>
+                        <div class="col custom-col">
+                            <div class="container-fluid banner2">
+                                <h6>Random Forest</h6>
+                            </div>
+                        </div>
+                        <div class="col custom-col">
+                            <div class="container-fluid banner2">
+                                <h6>Neural Network</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Plot Row -->
+                    <div class="row">
+                        <div class="col custom-col">
                             <img id="imgElement_15Percent_GB" src="{{ url_for('static', filename='images/li_plots/Gulf_Coast_actual_predicted_gradient_boosting_no_pca.png') }}" alt="Within15%Plot">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col custom-col">
                             <img id="imgElement_15Percent_KNN" src="{{ url_for('static', filename='images/li_plots/GulfCoast_actual_vs_predicted_knn_no_pca.png') }}" alt="Within15%Plot">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col custom-col">
                             <img id="imgElement_15Percent_SVR" src="{{ url_for('static', filename='images/li_plots/GulfCoast_actual_vs_predicted_svr_no_pca.png') }}" alt="Within15%Plot">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col custom-col">
                             <img id="imgElement_15Percent_RF" src="{{ url_for('static', filename='images/li_plots/Gulf_Coast_actual_predicted_random_forest_no_pca.png') }}" alt="Within15%Plot">
                         </div>
-                        <div class="col-md-4">
+                        <div class="col custom-col">
                             <img id="imgElement_15Percent_NN" src="{{ url_for('static', filename='images/li_plots/Gulf_Coast_actual_predicted_neural_network_no_pca.png') }}" alt="Within15%Plot">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p> </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Container for MTSC Items -->
+                <div class="container-fluid">
+                    <!-- MTSC Banner -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="container-fluid banner4">
+                                <h3>Multi-Target Sequential Chaining (MTSC) for Li Concentrations in the Gulf Coast Basin</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p> </p>
+                        </div>
+                    </div>
+                    
+                    <!-- MTSC Visuals -->
+                    <div class="row">
+                        <!-- Table Banner -->
+                        <div class="col-md-5">
+                            <div class="container-fluid banner2">
+                                <h6>Performance Metrics</h6>
+                            </div>
+                        </div>
+                        <!-- Map Banner -->
+                        <div class="col-md-7">
+                            <div class="container-fluid banner2">
+                                <h6>Geoplot of Li Concentrations Results for Each Model Type</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p> </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <p> </p>
+                        </div>
+                        <div class="col-md-7">
+                            <p>Toggle the lithium concentration data sets on and off using the selections in the top right corner of the map below to view the predicted values to see which model(s) compare best with the actual data.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p> </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="row">
+                                <img id="imgElement_Table" src="{{ url_for('static', filename='images/li_plots/MTSC_table.png') }}" alt="Table">
+                            </div>
+                            <div class="row">
+                                MSE = Mean Squared Error <br>
+                                MAE = Mean Absolute Error <br>
+                                R2 = Coefficient of Determination <br>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <iframe id="map5" src="{{ url_for('map5') }}" height="650" width=100% title="map1"></iframe>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p> </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Containers for Visuals -->
-                <div class="container-fluid">
-                    ...
-                </div>  
+                <!-- GitHub Repo Plug -->
                 <div class="container-fluid">
                     <p><br>If you are interested in exploring the code behind these visuals, or the data that is feeding them, please check out our github repository:  
                     <a href="https://github.com/bsvab/predicting-li-concentration-with-machine-learning" target="_blank">www.github.com/bsvab/predicting-li-concentration-with-machine-learning</a>.
