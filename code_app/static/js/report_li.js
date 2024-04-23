@@ -12,14 +12,15 @@ function insertHTML() {
     <ul>
       <li><a href="#1-introduction">1. Introduction</a></li>
       <li><a href="#2-data-preparation">2. Data Preparation</a></li>
-      <li><a href="#3-imputation-strategy">3. Imputation Strategy</a></li>
-      <li><a href="#4-heatmap-analysis">4. Heatmap Analysis</a></li>
-      <li><a href="#5-principal-component-analysis-pca">5. Principal Component Analysis (PCA)</a></li>
-      <li><a href="#6-predictive-modeling">6. Predictive Modeling</a></li>
-      <li><a href="#7-conclusion">7. Conclusion</a></li>
-      <li><a href="#8-technologies">8. Technologies</a></li>
-      <li><a href="#9-data-sources">9. Data Sources</a></li>
-      <li><a href="#10-contributors">10. Contributors</a></li>
+      <li><a href="#3-amazon-rds">3. Amazon RDS</a></li>
+      <li><a href="#4-imputation-strategy">4. Imputation Strategy</a></li>
+      <li><a href="#5-heatmap-analysis">5. Heatmap Analysis</a></li>
+      <li><a href="#6-principal-component-analysis-pca">6. Principal Component Analysis (PCA)</a></li>
+      <li><a href="#7-predictive-modeling">7. Predictive Modeling</a></li>
+      <li><a href="#8-conclusion">8. Conclusion</a></li>
+      <li><a href="#9-technologies">9. Technologies</a></li>
+      <li><a href="#10-data-sources">10. Data Sources</a></li>
+      <li><a href="#11-contributors">11. Contributors</a></li>
     </ul>
     
     <h2 style="color:#996600">1. Introduction</h2>
@@ -50,11 +51,11 @@ function insertHTML() {
     <img src="${img_flowchart}" alt="Flowchart">
     <br><br>
     
-    <h2 style="color:#996600">3. Imputation Strategy</h2>
+    <h2 style="color:#996600">4. Imputation Strategy</h2>
     
     <p>For geochemical datasets, where the variables often exhibit complex interdependencies, simplistic imputation methods such as substitution by mean, median, or extremities like minimum and maximum values may not adequately capture the intrinsic variability and can potentially introduce biases. To address the missing data in our dataset, we utilized an Iterative Imputer, employing a RandomForestRegressor as the estimator. This advanced imputation technique considers the entire variable distribution and the stochastic nature of the dataset, thereby preserving the inherent multivariate relationships among geochemical parameters. It is especially critical in PCA, which requires a complete dataset as missing values can significantly distort the principal components derived from the analysis. PCA is discussed further below.</p>
     
-    <h2 style="color:#996600">4. Heatmap Analysis</h2>
+    <h2 style="color:#996600">5. Heatmap Analysis</h2>
     
     <p>Through heatmap analysis, we have examined the correlations between Lithium (Li) concentrations and various geochemical parameters across multiple basins. The following section elucidates the distinct geochemical signatures observed in each basin and discusses the implications of these findings for predicting Lithium concentrations.</p>
     
@@ -81,7 +82,7 @@ function insertHTML() {
     
     <p>In other basins, such as the Rocky Mountain, the correlations are less pronounced, which may necessitate a more nuanced approach to modeling that incorporates a broader array of features or perhaps the development of basin-specific prediction models.</p>
     
-    <h2 style="color:#996600">5. Principal Component Analysis (PCA)</h2>
+    <h2 style="color:#996600">6. Principal Component Analysis (PCA)</h2>
 
     <p>Principal Component Analysis (PCA) was applied to the geochemical data from each basin separately. The findings from this dimensionality reduction technique provided insights into the underlying data structure and the interrelations among geochemical variables, as summarized below for each basin:</p>
 
@@ -195,7 +196,7 @@ function insertHTML() {
 
     <br>
 
-    <h2 style="color:#996600">6. Predictive Modeling</h2>
+    <h2 style="color:#996600">7. Predictive Modeling</h2>
 
     <h3 style="color:gray">Input Data Scenarios</h3>
 
@@ -397,7 +398,7 @@ function insertHTML() {
     <img src="${img_mtsc_geomap}" alt="GeoMap">
     <br><br>
 
-    <h2 style="color:#996600">7. Conclusion</h2>
+    <h2 style="color:#996600">8. Conclusion</h2>
 
     <p>This study on geochemical data analysis and Lithium concentration prediction has leveraged a multifaceted machine learning approach to uncover and exploit the subtle nuances within produced water samples from various geological basins across the United States. By employing advanced statistical and machine learning techniques, including Principal Component Analysis (PCA) and sophisticated imputation methods, we have systematically enhanced our understanding and predictive capabilities concerning Lithium concentrations, a critical component in contemporary energy production and battery storage.</p>
 
@@ -409,7 +410,7 @@ function insertHTML() {
 
     <p>The project has not only demonstrated the feasibility of using advanced machine learning techniques to predict Lithium concentrations in produced water but also highlighted the potential for these methodologies to revolutionize how industries related to energy production and environmental management operate. By turning intricate geochemical data into actionable insights, this research paves the way for more informed decision-making and strategic resource management in the energy sector.</p>
 
-    <h2 style="color:#996600">8. Technologies</h2>
+    <h2 style="color:#996600">9. Technologies</h2>
 
     <ul>
     <li>Languages 
@@ -454,7 +455,7 @@ function insertHTML() {
     </li>
     </ul>
 
-    <h2 style="color:#996600">9. Data Sources</h2>
+    <h2 style="color:#996600">10. Data Sources</h2>
 
     <ul>
     <li>CMG Model Output</li>
@@ -463,7 +464,7 @@ function insertHTML() {
     <li><a href="https://www.usgs.gov/" target="_blank">USGS Produced Water Data</a></li>
     </ul>
 
-    <h2 style="color:#996600">10. Contributors</h2>
+    <h2 style="color:#996600">11. Contributors</h2>
 
     <ul>
     <li><a href="https://github.com/roxanadrv" target="_blank">Roxana Darvari</a></li>
