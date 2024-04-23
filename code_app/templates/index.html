@@ -260,8 +260,8 @@
                         <div class="col-lg-12" id="report_seismic">
                             <!-- html inserted via report_seismic.js file-->
                             <script >
-                                let flowchart="{{ url_for('static', filename='images/report_seismic/project3_flowchart.png') }}"
-                                </script>
+                                let flowchart="{{ url_for('static', filename='images/report_seismic/project3_flowchart.png') }}";
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -440,6 +440,9 @@
                     <div class="row">
                         <div class="col-lg-12" id="report_chemistry">
                             <!-- html inserted via report_chemistry.js file-->
+                            <script >
+                                // let flowchart="{{ url_for('static', filename='images/report_seismic/project3_flowchart.png') }}" <---- CHANGE TO BE THE CORRECT IMAGES
+                                </script>
                         </div>
                     </div>
                 </div>
@@ -538,7 +541,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="container-fluid banner4">
-                                <h3>Plots of Predicted Values Within 15% of Actuals for Each Method for the Gulf Coast Basin | With PCA</h3>
+                                <h3>Plots of Predicted Values versus Actual Values for Each Method for the Gulf Coast Basin | With PCA</h3>
                             </div>
                         </div>
                     </div>
@@ -603,7 +606,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="container-fluid banner4">
-                                <h3>Plots of Predicted Values Within 15% of Actuals for Each Method for the Gulf Coast Basin | Without PCA</h3>
+                                <h3>Plots of Predicted Values versus Actual Values for Each Method for the Gulf Coast Basin | Without PCA</h3>
                             </div>
                         </div>
                     </div>
@@ -758,6 +761,18 @@
                     <div class="row">
                         <div class="col-lg-12" id="report_li">
                             <!-- html inserted via report_li.js file-->
+                            <script >
+                                // Must define all image paths within index file for Flask app to be able to read
+                                let img_flowchart = "{{ url_for('static', filename='images/report_li/flowchart.png') }}";
+                                let img_data_table = "{{ url_for('static', filename='images/report_li/data_info_table.png') }}";
+                                let img_mtsc_geomap = "{{ url_for('static', filename='images/report_li/MTSC_geomap.png') }}";
+                                let img_mtsc_table = "{{ url_for('static', filename='images/report_li/MTSC_table.png') }}";
+                                let img_performance_gb = "{{ url_for('static', filename='images/li_plots/gradient_boosting_performance_comparison.png') }}";
+                                let img_performance_knn = "{{ url_for('static', filename='images/li_plots/knn_performance_comparison.png') }}";
+                                let img_performance_svr = "{{ url_for('static', filename='images/li_plots/svr_performance_comparison.png') }}";
+                                let img_performance_rf = "{{ url_for('static', filename='images/li_plots/random_forest_performance_comparison.png') }}";
+                                let img_performance_nn = "{{ url_for('static', filename='images/li_plots/neural_network_performance_comparison.png') }}";
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -873,7 +888,7 @@
                                         process improvement and meticulous attention to detail. Notably, as the Preconstruction Manager for our Austin office, I was tasked with revitilizing 
                                         the team, significantly improving our win ratio by 24% within the first year along with providing a renewed focus on re-aligning culture and maintaining
                                         sound processes for consistent, accurate results. I implemented a monthly metric regimen, contributing to the development of an enterprise-wide dashboard 
-                                        for live sales information across all geographies. Currently, I'm undergoing intensive training in data analytics and visualization tools like Python, SQL, 
+                                        for live sales information across all geographies. I've recently completed intensive training in data analytics and visualization tools like Python, SQL, 
                                         Tableau, and others, poised to leverage this expertise for actionable insights and enhanced decision-making strategies in the data analytics realm.</p>
                                 </div>
                             </div>
@@ -901,7 +916,7 @@
                                 <div class="row">
                                     <div class="container-fluid banner3">
                                         <h3>Alejandro Juarez</h3>
-                                        <img class="logo_li" src="" alt="linkedin"> <a id="about" href="https://www.linkedin.com/in/alejandro-juarez-4a0778194" target="_blank">www.linkedin.com/in/alejandro-juarez-4a0778194</a> &nbsp; &nbsp;
+                                        <img class="logo_li" src="" alt="linkedin"> <a id="about" href="https://www.linkedin.com/in/ajuarez-analyst/" target="_blank">www.linkedin.com/in/ajuarez-analyst</a> &nbsp; &nbsp;
                                         <img class="logo_gh" src="" alt="github"> <a id="about" href="https://github.com/ajuarez2112" target="_blank">www.github.com/ajuarez2112</a>
                                     </div>
                                 </div>

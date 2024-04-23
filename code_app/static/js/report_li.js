@@ -24,7 +24,7 @@ function insertHTML() {
     
     <h2 style="color:#996600">1. Introduction</h2>
     
-    <p>In this report, we present an analysis of geochemical data of produced water samples, obtained from the <a href="https://www.sciencebase.gov/catalog/item/64fa1e71d34ed30c2054ea11">U.S. Geological Survey</a>. Our objective is to apply statistical and machine learning techniques to predict Lithium (Li) concentrations in produced water from oil and gas production. Data preprocessing encompasses Principal Component Analysis (PCA), iterative imputation techniques to handle null values, and spearman correlation heatmaps. The machine learning models utilized in this project include Gradient Boosting (GB), Random Forest (RF), Neural Networks (NN), K-Nearest Neighbor (KNN), and Support Vector Regression (SVR).</p>
+    <p>In this report, we present an analysis of geochemical data of produced water samples, obtained from the <a href="https://www.sciencebase.gov/catalog/item/64fa1e71d34ed30c2054ea11" target="_blank">U.S. Geological Survey</a>. Our objective is to apply statistical and machine learning techniques to predict Lithium (Li) concentrations in produced water from oil and gas production. Data preprocessing encompasses Principal Component Analysis (PCA), iterative imputation techniques to handle null values, and spearman correlation heatmaps. The machine learning models utilized in this project include Gradient Boosting (GB), Random Forest (RF), Neural Networks (NN), K-Nearest Neighbor (KNN), and Support Vector Regression (SVR).</p>
     
     <h2 style="color:#996600">2. Data Preparation</h2>
     
@@ -39,7 +39,16 @@ function insertHTML() {
     
     <p>See the below table with the statistical info for the data after general and technical cleaning.</p>
     
-    <img src="images/readme/data_info_table.png" alt="Cleaned Data Info">
+    <img src="${img_data_table}" alt="Cleaned Data Info">
+    <br><br>
+
+    <h2 style="color:#996600">3. Amazon RDS</h2>
+    <p>The platform selected for our database management is Amazon Relational Database Service (Amazon RDS), which was determined to be optimally suited for handling our extensive datasets. Following the successful establishment of the database, we employed the Psycopg2 and SQLAlchemy libraries within Python to facilitate data loading procedures. The initial step involved the configuration of a connection between pgAdmin and Amazon RDS. Subsequent to this, we proceeded to create distinct tables corresponding to each dataset.The data, originally stored in CSV files, was imported into Pandas DataFrames. Finally, we systematically uploaded the data from each DataFrame into the appropriate tables in Amazon RDS.This structured data was subsequently retrieved from the database for use in various machine learning models and for the creation of our dashboard.</p>
+
+    <p>For a visual representation of this process, please refer to the flowchart below.</p>
+
+    <img src="${img_flowchart}" alt="Flowchart">
+    <br><br>
     
     <h2 style="color:#996600">3. Imputation Strategy</h2>
     
@@ -66,7 +75,7 @@ function insertHTML() {
       <li><strong>Fort Worth Basin</strong>: Iron Total (FeTot) had a perfect correlation with Lithium, while Ca and Ba also showed very strong correlations, with coefficients above 0.86.</li>
     </ul>
     
-    <h3 style="color:gray">Implications for understanding the dataset</h3>
+    <h3 style="color:gray">Implications for Understanding the Dataset</h3>
     
     <p>The disparities in geochemical correlations with Lithium across basins underscore the complexity of geochemical interactions within distinct geological settings. In some basins, certain elements exhibit extremely strong, if not perfect, correlations with Lithium, suggesting a potential for direct predictive modeling of Lithium concentrations based on these elements.</p>
     
@@ -220,7 +229,8 @@ function insertHTML() {
 
     <p>The following plots display the performance metrics of the machine learning models in each basin for both scenarios:</p>
 
-    <img src="images/performance_comparison_plots/gradient_boosting_performance_comparison.png" alt="Performance Metrics" />
+    <img src="${img_performance_gb}" alt="Performance Metrics">
+    <br><br>
 
     <p>Generally, models trained on the full set of imputed data without PCA perform better than their PCA-transformed counterparts. This trend suggests that the reduction of dimensionality through PCA might lead to the loss of critical information necessary for making accurate predictions in certain basins.
     Basins with complex geochemical backgrounds, such as the Great Plains and Gulf Coast, show varied responses to PCA, with significant performance degradation noted when critical variables are potentially omitted during dimensionality reduction.
@@ -252,17 +262,19 @@ function insertHTML() {
 
     <p>The following plots display the performance metrics of the machine learning models in each basin for both scenarios:</p>
 
-    <img src="images/performance_comparison_plots/knn_performance_comparison.png" alt="Performance Metrics" />
-    <br>
+    <img src="${img_performance_knn}" alt="Performance Metrics">
+    <br><br>
 
-    <p>Summary of results:
-    - The KNN analysis was conducted using both PCA-transformed and non-PCA data inputs across various basins.
-    - For the PCA-transformed data, the best performing K value ranged from 1 to 3.
-    - The explained variance ranged from 10.36% to 99.55% for PCA-transformed data and from 10.36% to 99.55% for non-PCA data.
-    - The mean squared error (MSE) varied significantly across basins and data input types, with values ranging from 3.01 to 40,328.95.
-    - Percentage of predicted values within ±5%, ±15%, ±25%, and ±50% of actual values varied across basins, with differences observed between PCA and non-PCA data.
-    - Cross-validation MSE ranged from 4.10 to 8659.87 for PCA-transformed data and from 74.79 to 3864.63 for non-PCA data, indicating varying levels of model generalization performance.
-    - Performance metrics such as MSE, explained variance, and percentage of predicted values within certain ranges varied depending on the specific basin and the use of PCA in preprocessing the data.</p>
+    <p>Summary of results:</p>
+    <ul>
+    <li>The KNN analysis was conducted using both PCA-transformed and non-PCA data inputs across various basins.</li>
+    <li>For the PCA-transformed data, the best performing K value ranged from 1 to 3.</li>
+    <li>The explained variance ranged from 10.36% to 99.55% for PCA-transformed data and from 10.36% to 99.55% for non-PCA data.</li>
+    <li>The mean squared error (MSE) varied significantly across basins and data input types, with values ranging from 3.01 to 40,328.95.</li>
+    <li>Percentage of predicted values within ±5%, ±15%, ±25%, and ±50% of actual values varied across basins, with differences observed between PCA and non-PCA data.</li>
+    <li>Cross-validation MSE ranged from 4.10 to 8659.87 for PCA-transformed data and from 74.79 to 3864.63 for non-PCA data, indicating varying levels of model generalization performance.</li>
+    <li>Performance metrics such as MSE, explained variance, and percentage of predicted values within certain ranges varied depending on the specific basin and the use of PCA in preprocessing the data.</li>
+    </ul>
 
     <h3 style="color:gray">Support Vector Regression (SVR) for Lithium Concentration Prediction</h3>
 
@@ -288,28 +300,32 @@ function insertHTML() {
 
     <p>The following plots display the performance metrics of the machine learning models in each basin for both scenarios:</p>
 
-    <img src="images/performance_comparison_plots/svr_performance_comparison.png" alt="Performance Metrics" />
-    <br>
+    <img src="${img_performance_svr}" alt="Performance Metrics">
+    <br><br>
 
-    <p>Summary of results:
-    - The SVR analysis was conducted using both PCA-transformed and non-PCA data inputs across multiple basins.
-    - PCA-transformed data inputs utilized principal components as features, while non-PCA data inputs consisted of specific chemical and geological features.
-    - Various kernel options including RBF, polynomial, and sigmoid were tested for SVR, with different basins favoring different kernels as the best performing.
-    - The hyperparameter C, representing the regularization parameter, varied across basins, with different optimal values selected for each.
-    - Performance metrics such as the percentage of predicted values within certain ranges of actual values, quantile losses, and cross-validation mean squared error (MSE) were evaluated.
-    - Results indicated varying levels of prediction accuracy and generalization performance across basins and data input types, highlighting the importance of selecting appropriate preprocessing techniques and hyperparameters for SVR regression.</p>
+    <p>Summary of results:</p>
+    <ul>
+    <li>The SVR analysis was conducted using both PCA-transformed and non-PCA data inputs across multiple basins.</li>
+    <li>PCA-transformed data inputs utilized principal components as features, while non-PCA data inputs consisted of specific chemical and geological features.</li>
+    <li>Various kernel options including RBF, polynomial, and sigmoid were tested for SVR, with different basins favoring different kernels as the best performing.</li>
+    <li>The hyperparameter C, representing the regularization parameter, varied across basins, with different optimal values selected for each.</li>
+    <li>Performance metrics such as the percentage of predicted values within certain ranges of actual values, quantile losses, and cross-validation mean squared error (MSE) were evaluated.</li>
+    <li>Results indicated varying levels of prediction accuracy and generalization performance across basins and data input types, highlighting the importance of selecting appropriate preprocessing techniques and hyperparameters for SVR regression.</li>
+    </ul>
 
     <h3 style="color:gray">Random Forest for Lithium Concentration Prediction</h3>
 
     <h4><ins>Methodology</ins></h4>
 
-    <p>The Random Forest models were implemented using the scikit-learn library, optimized for geochemical data analysis to predict lithium concentrations. Each model configuration was adapted to handle different data scenarios effectively:
-    - <strong>Random Forest Setup</strong>: The model utilized a Random Forest Regressor, an ensemble learning method known for its robustness and accuracy in regression tasks. The forest comprised multiple decision trees, whose parameters were fine-tuned using hyperparameter optimization.
-    - <strong>Hyperparameter Tuning</strong>: A grid search was conducted to find the optimal model settings, utilizing a parameter grid that included:
-    - <strong>Number of Estimators</strong>: Options of 100, 200, 300 trees to explore the effect of forest size on performance.
-    - <strong>Maximum Depth</strong>: Tree depths of None (fully grown trees), 10, and 20 to control overfitting.
-    - <strong>Minimum Samples Split</strong>: Minimum number of samples required to split a node set at 2, 5, and 10, impacting the model's sensitivity to data variance.
-    - <strong>Minimum Samples Leaf</strong>: Minimum number of samples required at a leaf node, tested with 1, 2, and 4, which helps in stabilizing the predictions across diverse data points.</p>
+    <p>The Random Forest models were implemented using the scikit-learn library, optimized for geochemical data analysis to predict lithium concentrations. Each model configuration was adapted to handle different data scenarios effectively:</p>
+    <ul>
+    <li><strong>Random Forest Setup</strong>: The model utilized a Random Forest Regressor, an ensemble learning method known for its robustness and accuracy in regression tasks. The forest comprised multiple decision trees, whose parameters were fine-tuned using hyperparameter optimization.</li>
+    <li><strong>Hyperparameter Tuning</strong>: A grid search was conducted to find the optimal model settings, utilizing a parameter grid that included:</li>
+    <li><strong>Number of Estimators</strong>: Options of 100, 200, 300 trees to explore the effect of forest size on performance.</li>
+    <li><strong>Maximum Depth</strong>: Tree depths of None (fully grown trees), 10, and 20 to control overfitting.</li>
+    <li><strong>Minimum Samples Split</strong>: Minimum number of samples required to split a node set at 2, 5, and 10, impacting the model's sensitivity to data variance.</li>
+    <li><strong>Minimum Samples Leaf</strong>: Minimum number of samples required at a leaf node, tested with 1, 2, and 4, which helps in stabilizing the predictions across diverse data points.</li>
+    </ul>
 
     <h4><ins>Predictive Performance</ins></h4>
 
@@ -317,7 +333,8 @@ function insertHTML() {
 
     <p>The following plots display the performance metrics of the machine learning models in each basin for both scenarios:</p>
 
-    <img src="images/performance_comparison_plots/random_forest_performance_comparison.png" alt="Performance Metrics" />
+    <img src="${img_performance_rf}" alt="Performance Metrics">
+    <br><br>
 
     <p>The analysis suggests that Random Forest models without PCA generally provide better predictive performance when they have access to the complete geochemical dataset, as seen in the Gulf Coast and Williston Basins. This indicates that the richness of the full dataset provides a more accurate basis for predicting lithium concentrations, particularly in complex geochemical environments where interactions between numerous variables are critical. While PCA offers benefits in reducing dimensionality and computational demands, its appropriateness varies by the specific characteristics of each basin's geochemical profile. The effectiveness of models without PCA in certain basins advocates for a cautious approach to dimensionality reduction, suggesting that retaining more comprehensive data may sometimes be advantageous for maintaining predictive accuracy in Random Forest models.</p>
 
@@ -337,7 +354,8 @@ function insertHTML() {
 
     <p>The following plots display the performance metrics of the machine learning models in each basin for both scenarios:</p>
 
-    <img src="images/performance_comparison_plots/neural_network_performance_comparison.png" alt="Performance Metrics" />
+    <img src="${img_performance_nn}" alt="Performance Metrics">
+    <br><br>
 
     <p>The analysis underscores the importance of appropriate data preprocessing and feature extraction techniques in modeling complex geological datasets. PCA transformation generally enhances model performance by highlighting essential features and omitting redundant or irrelevant data. However, the variability in model success across different basins suggests that a one-size-fits-all approach may not be appropriate. Tailoring data preprocessing and modeling techniques to the specific characteristics of each basin could yield better predictive accuracy.</p>
 
@@ -371,12 +389,12 @@ function insertHTML() {
     <li><strong>Algorithm Selection</strong>: Although Gradient Boosting demonstrated solid performance, the standout results achieved by SVR and XGBRegressor, with R^2 scores of 0.798 and 0.792 respectively, highlight the efficacy of a diversified modeling approach. The strong performances of these models suggest that an ensemble strategy, leveraging the distinct strengths of various algorithms, could be advantageous for enhancing the robustness and accuracy of predictions in complex geochemical environments. This approach would capitalize on the complementary capabilities of different models to address various facets of the prediction task. The summary of parameters and performance metrics of the MTSC method is listed in the following table.</li>
     </ul>
 
-    <img src="images/readme/MTSC_table.png" alt="Table" />
+    <img src="${img_mtsc_table}" alt="Table">
     <br><br>
 
     <p>The geoplot shown below displays both the known and the predicted lithium concentrations according to each model used in the MTSC method. This visualization enables users to visually evaluate the size of the circles, which correspond to the lithium concentrations, and to compare the spatial distribution of predicted versus actual concentrations. The example geomap below depicts only the predicted values from the gradient boosting model (green circles) and the actual lithium values (red circles).</p>
 
-    <img src="images/readme/MTSC_geomap.png" alt="GeoMap" />
+    <img src="${img_mtsc_geomap}" alt="GeoMap">
     <br><br>
 
     <h2 style="color:#996600">7. Conclusion</h2>
@@ -396,42 +414,42 @@ function insertHTML() {
     <ul>
     <li>Languages 
         <ul>
-            <li><a href="https://www.python.org/">Python 3.10 or higher</a></li>
-            <li><a href="https://html.spec.whatwg.org/multipage/">HTML</a></li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">Javascript</a></li>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
-            <li><a href="https://www.postgresql.org/docs/current/sql.html">SQL(via PostgreSQL)</a></li>
+            <li><a href="https://www.python.org/" target="_blank">Python 3.10 or higher</a></li>
+            <li><a href="https://html.spec.whatwg.org/multipage/" target="_blank">HTML</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank">Javascript</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a></li>
+            <li><a href="https://www.postgresql.org/docs/current/sql.html" target="_blank">SQL(via PostgreSQL)</a></li>
         </ul>
     </li>
     <li>Libraries / Modules / Plugins
         <ul>
-            <li><a href="https://matplotlib.org/">Matplotlib</a></li>
-            <li><a href="https://www.scipy.org/scipylib">SciPy</a></li>
-            <li><a href="https://scikit-learn.org/stable/index.html">Scikit-learn</a></li>
-            <li><a href="https://github.com/jyangfsu/WQChartPy/tree/main?tab=readme-ov-file">WQChartPy</a></li> 
-            <li><a href="https://seaborn.pydata.org/#">Seaborn</a></li>
-            <li><a href="https://geopandas.org/en/stable/#">GeoPandas</a></li>
-            <li><a href="https://pypi.org/project/folium/">Folium</a></li>
-            <li><a href="https://pypi.org/project/branca/">Branca</a></li>
-            <li><a href="https://leafletjs.com/">Leaflet</a></li>
-            <li><a href="https://getbootstrap.com/">Bootstrap 4.5.2</a></li>
-            <li><a href="https://jquery.com/">jQuery 3.5.1</a></li>
-            <li><a href="https://popper.js.org/">Popper.js 1.16.0</a></li>
-            <li><a href="https://d3js.org/">D3.js v7</a></li>
-            <li><a href="https://www.papaparse.com/">PapaParse 5.3.0</a></li>
-            <li><a href="https://pandas.pydata.org/">Pandas</a></li>
-            <li><a href="https://www.numpy.org">NumPy</a></li>
-            <li><a href="https://www.psycopg.org/docs/">Psycopg2</a></li>
-            <li><a href="https://www.sqlalchemy.org/">SQLAlchemy</a></li>
-            <li><a href="https://pypi.org/project/pyproj/">Pyproj 3.6.1</a></li>
-            <li><a href="https://flask.palletsprojects.com/en/3.0.x/">Flask</a></li>
-            <li><a href="https://www.tensorflow.org/">TensorFlow</a></li>
+            <li><a href="https://matplotlib.org/" target="_blank">Matplotlib</a></li>
+            <li><a href="https://www.scipy.org/scipylib" target="_blank">SciPy</a></li>
+            <li><a href="https://scikit-learn.org/stable/index.html" target="_blank">Scikit-learn</a></li>
+            <li><a href="https://github.com/jyangfsu/WQChartPy/tree/main?tab=readme-ov-file" target="_blank">WQChartPy</a></li> 
+            <li><a href="https://seaborn.pydata.org/#" target="_blank">Seaborn</a></li>
+            <li><a href="https://geopandas.org/en/stable/#" target="_blank">GeoPandas</a></li>
+            <li><a href="https://pypi.org/project/folium/" target="_blank">Folium</a></li>
+            <li><a href="https://pypi.org/project/branca/" target="_blank">Branca</a></li>
+            <li><a href="https://leafletjs.com/" target="_blank">Leaflet</a></li>
+            <li><a href="https://getbootstrap.com/" target="_blank">Bootstrap 4.5.2</a></li>
+            <li><a href="https://jquery.com/" target="_blank">jQuery 3.5.1</a></li>
+            <li><a href="https://popper.js.org/" target="_blank">Popper.js 1.16.0</a></li>
+            <li><a href="https://d3js.org/" target="_blank">D3.js v7</a></li>
+            <li><a href="https://www.papaparse.com/" target="_blank">PapaParse 5.3.0</a></li>
+            <li><a href="https://pandas.pydata.org/" target="_blank">Pandas</a></li>
+            <li><a href="https://www.numpy.org" target="_blank">NumPy</a></li>
+            <li><a href="https://www.psycopg.org/docs/" target="_blank">Psycopg2</a></li>
+            <li><a href="https://www.sqlalchemy.org/" target="_blank">SQLAlchemy</a></li>
+            <li><a href="https://pypi.org/project/pyproj/" target="_blank">Pyproj 3.6.1</a></li>
+            <li><a href="https://flask.palletsprojects.com/en/3.0.x/" target="_blank">Flask</a></li>
+            <li><a href="https://www.tensorflow.org/" target="_blank">TensorFlow</a></li>
         </ul>
     </li>
     <li>Other Tools
         <ul>
-            <li><a href="https://www.postgresql.org/docs/">PostgreSQL</a></li>
-            <li><a href="https://aws.amazon.com/rds/">Amazon Web Services RDS</a></li>
+            <li><a href="https://www.postgresql.org/docs/" target="_blank">PostgreSQL</a></li>
+            <li><a href="https://aws.amazon.com/rds/" target="_blank">Amazon Web Services RDS</a></li>
         </ul>
     </li>
     </ul>
@@ -440,18 +458,18 @@ function insertHTML() {
 
     <ul>
     <li>CMG Model Output</li>
-    <li><a href="https://www.beg.utexas.edu/texnet-cisr/texnet">TexNet Seismic Data</a></li>
-    <li><a href="https://injection.texnet.beg.utexas.edu/api/Export">Injection Data API</a></li>
-    <li><a href="https://www.usgs.gov/">USGS Produced Water Data</a></li>
+    <li><a href="https://www.beg.utexas.edu/texnet-cisr/texnet" target="_blank">TexNet Seismic Data</a></li>
+    <li><a href="https://injection.texnet.beg.utexas.edu/api/Export" target="_blank">Injection Data API</a></li>
+    <li><a href="https://www.usgs.gov/" target="_blank">USGS Produced Water Data</a></li>
     </ul>
 
     <h2 style="color:#996600">10. Contributors</h2>
 
     <ul>
-    <li><a href="https://github.com/roxanadrv">Roxana Darvari</a></li>
-    <li><a href="https://github.com/bsvab">Brittany Svab</a></li>
-    <li><a href="https://github.com/ajuarez2112">Alejandro Juarez</a></li>
-    <li><a href="https://github.com/thesarahcain">Sarah Cain</a></li>
+    <li><a href="https://github.com/roxanadrv" target="_blank">Roxana Darvari</a></li>
+    <li><a href="https://github.com/bsvab" target="_blank">Brittany Svab</a></li>
+    <li><a href="https://github.com/ajuarez2112" target="_blank">Alejandro Juarez</a></li>
+    <li><a href="https://github.com/thesarahcain" target="_blank">Sarah Cain</a></li>
     </ul>
 
     `;

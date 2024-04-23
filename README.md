@@ -36,7 +36,7 @@ The platform selected for our database management is Amazon Relational Database 
 
 For a visual representation of this process, please refer to the flowchart below.
 
-  ![Flowchart](/images/readme/flowchart.png)
+  ![Flowchart](images/readme/flowchart.png)
 <br>
 
 ## <p style="color:#996600">4. Imputation Strategy</p>
@@ -72,7 +72,7 @@ Our heatmap analysis pinpointed the top three geochemical features most correlat
 
 - **Fort Worth Basin**: Iron Total (FeTot) had a perfect correlation with Lithium, while Ca and Ba also showed very strong correlations, with coefficients above 0.86.
 
-### <p style="color:gray">Implications for understanding the dataset</p>
+### <p style="color:gray">Implications for Understanding the Dataset</p>
 The disparities in geochemical correlations with Lithium across basins underscore the complexity of geochemical interactions within distinct geological settings. In some basins, certain elements exhibit extremely strong, if not perfect, correlations with Lithium, suggesting a potential for direct predictive modeling of Lithium concentrations based on these elements.
 
 In other basins, such as the Rocky Mountain, the correlations are less pronounced, which may necessitate a more nuanced approach to modeling that incorporates a broader array of features or perhaps the development of basin-specific prediction models.

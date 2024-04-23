@@ -58,8 +58,8 @@ function insertHTML() {
 
         <ul>
         <li><strong>Pressure Data</strong>: Originated from a text file, this dataset was transformed into a CSV format to facilitate easier manipulation and integration into our analysis framework.</li>
-        <li><strong>Injection Volume Data</strong>: Retrieved from an API endpoint (<a href="https://injection.texnet.beg.utexas.edu/api/Export">https://injection.texnet.beg.utexas.edu/api/Export</a>), with specific parameters tailored to extract only the data pertinent to our project's scope.</li>
-        <li><strong>Earthquake Data</strong>: Sourced from another API endpoint (<a href="https://maps.texnet.beg.utexas.edu/arcgis/rest/services/catalog/catalog_all_flat/MapServer/0/query">https://maps.texnet.beg.utexas.edu/arcgis/rest/services/catalog/catalog_all_flat/MapServer/0/query</a>), utilizing targeted parameters to filter the dataset according to our analytical needs. The data was initially loaded in JSON format.</li>
+        <li><strong>Injection Volume Data</strong>: Retrieved from an API endpoint (<a href="https://injection.texnet.beg.utexas.edu/api/Export target="_blank">https://injection.texnet.beg.utexas.edu/api/Export</a>), with specific parameters tailored to extract only the data pertinent to our project's scope.</li>
+        <li><strong>Earthquake Data</strong>: Sourced from another API endpoint (<a href="https://maps.texnet.beg.utexas.edu/arcgis/rest/services/catalog/catalog_all_flat/MapServer/0/query" target="_blank">https://maps.texnet.beg.utexas.edu/arcgis/rest/services/catalog/catalog_all_flat/MapServer/0/query</a>), utilizing targeted parameters to filter the dataset according to our analytical needs. The data was initially loaded in JSON format.</li>
         </ul>
 
         <h4 id="212-transform">2.1.2 TRANSFORM</h4>
@@ -80,6 +80,7 @@ function insertHTML() {
         <p>The below flowchart outlines the overall data flow for a multi-tab application that integrates TexNet's seismic data and injection volumes with pressure data from a CMG model (output in .txt format). It features two APIs provided by TexNet, one for injection volumes and another for seismicity data. The data from these sources is consolidated into a PostgreSQL database on AWS Cloud. A Flask application, utilizing HTML, CSS, and JavaScript, serves this data on a multi-tab dashboard, providing a comprehensive and interactive view of the data.</p>
 
         <img src="${flowchart}" alt="flowchart">
+        <br>
 
         <h3 style="color:#707070" id="24-visualizations">2.4 Visualizations</h3>
         <p>The methodology for incorporating seismic, injection, and pressure data into our interactive geomap involves several integral steps, leveraging both the front-end capabilities provided through the web application and the back-end functionalities enabled by our Flask app:</p>
@@ -148,33 +149,33 @@ function insertHTML() {
         <ul>
         <li>Languages
             <ul>
-                <li><a href="https://www.python.org/">Python 3.10 or higher</a></li>
-                <li><a href="https://html.spec.whatwg.org/multipage/">HTML</a></li>
-                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">Javascript</a></li>
-                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
-                <li><a href="https://www.postgresql.org/docs/current/sql.html">SQL(via PostgreSQL)</a></li>
+                <li><a href="https://www.python.org/" target="_blank">Python 3.10 or higher</a></li>
+                <li><a href="https://html.spec.whatwg.org/multipage/" target="_blank">HTML</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference" target="_blank">Javascript</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a></li>
+                <li><a href="https://www.postgresql.org/docs/current/sql.html" target="_blank">SQL(via PostgreSQL)</a></li>
             </ul>
         </li>
         <li>Libraries / Modules / Plugins
             <ul>
-                <li><a href="https://leafletjs.com/">Leaflet</a></li>
-                <li><a href="https://getbootstrap.com/">Bootstrap 4.5.2</a></li>
-                <li><a href="https://jquery.com/">jQuery 3.5.1</a></li>
-                <li><a href="https://popper.js.org/">Popper.js 1.16.0</a></li>
-                <li><a href="https://d3js.org/">D3.js v7</a></li>
-                <li><a href="https://www.papaparse.com/">PapaParse 5.3.0</a></li>
-                <li><a href="https://pandas.pydata.org/">Pandas</a></li>
-                <li><a href="https://www.numpy.org">NumPy</a></li>
-                <li><a href="https://www.psycopg.org/docs/">Psycopg2</a></li>
-                <li><a href="https://www.sqlalchemy.org/">SQLAlchemy</a></li>
-                <li><a href="https://pypi.org/project/pyproj/">Pyproj 3.6.1</a></li>
-                <li><a href="https://flask.palletsprojects.com/en/3.0.x/">Flask</a></li>
+                <li><a href="https://leafletjs.com/" target="_blank">Leaflet</a></li>
+                <li><a href="https://getbootstrap.com/" target="_blank">Bootstrap 4.5.2</a></li>
+                <li><a href="https://jquery.com/" target="_blank">jQuery 3.5.1</a></li>
+                <li><a href="https://popper.js.org/" target="_blank">Popper.js 1.16.0</a></li>
+                <li><a href="https://d3js.org/" target="_blank">D3.js v7</a></li>
+                <li><a href="https://www.papaparse.com/" target="_blank">PapaParse 5.3.0</a></li>
+                <li><a href="https://pandas.pydata.org/" target="_blank">Pandas</a></li>
+                <li><a href="https://www.numpy.org" target="_blank">NumPy</a></li>
+                <li><a href="https://www.psycopg.org/docs/" target="_blank">Psycopg2</a></li>
+                <li><a href="https://www.sqlalchemy.org/" target="_blank">SQLAlchemy</a></li>
+                <li><a href="https://pypi.org/project/pyproj/" target="_blank">Pyproj 3.6.1</a></li>
+                <li><a href="https://flask.palletsprojects.com/en/3.0.x/" target="_blank">Flask</a></li>
             </ul>
         </li>
         <li>Other Tools
             <ul>
-                <li><a href="https://www.postgresql.org/docs/">PostgreSQL</a></li>
-                <li><a href="https://aws.amazon.com/rds/">Amazon Web Services RDS</a></li>
+                <li><a href="https://www.postgresql.org/docs/" target="_blank">PostgreSQL</a></li>
+                <li><a href="https://aws.amazon.com/rds/" target="_blank">Amazon Web Services RDS</a></li>
             </ul>
         </li>
         </ul>
@@ -183,18 +184,18 @@ function insertHTML() {
 
         <ul>
         <li>CMG Model Output</li>
-        <li><a href="https://www.beg.utexas.edu/texnet-cisr/texnet">TexNet Seismic Data</a></li>
-        <li><a href="https://injection.texnet.beg.utexas.edu/api/Export">Injection Data API</a></li>
-        <li><a href="https://www.usgs.gov/">USGS Produced Water Data</a></li>
+        <li><a href="https://www.beg.utexas.edu/texnet-cisr/texnet" target="_blank">TexNet Seismic Data</a></li>
+        <li><a href="https://injection.texnet.beg.utexas.edu/api/Export" target="_blank">Injection Data API</a></li>
+        <li><a href="https://www.usgs.gov/" target="_blank">USGS Produced Water Data</a></li>
         </ul>
 
         <h2 style="color:#996600" id="7-contributors">7. Contributors</h2>
 
         <ul>
-        <li><a href="https://github.com/roxanadrv">Roxana Darvari</a></li>
-        <li><a href="https://github.com/bsvab">Brittany Svab</a></li>
-        <li><a href="https://github.com/ajuarez2112">Alejandro Juarez</a></li>
-        <li><a href="https://github.com/thesarahcain">Sarah Cain</a></li>
+        <li><a href="https://github.com/roxanadrv" target="_blank">Roxana Darvari</a></li>
+        <li><a href="https://github.com/bsvab" target="_blank">Brittany Svab</a></li>
+        <li><a href="https://github.com/ajuarez2112" target="_blank">Alejandro Juarez</a></li>
+        <li><a href="https://github.com/thesarahcain" target="_blank">Sarah Cain</a></li>
         </ul>
 
     `;
