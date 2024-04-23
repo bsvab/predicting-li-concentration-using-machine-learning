@@ -157,31 +157,31 @@ function insertHTML() {
         <ul>
         <li>Languages:</li>
             <ul>
-                <li><a href="https://www.python.org/">Python 3.10 or higher</a></li>
-                <li><a href="https://html.spec.whatwg.org/multipage/">HTML</a></li>
+                <li><a href="https://www.python.org/" target="_blank">Python 3.10 or higher</a></li>
+                <li><a href="https://html.spec.whatwg.org/multipage/" target="_blank">HTML</a></li>
             </ul>
         <li>Libraries / Modules / Plugins:</li>
             <ul>
-                <li><a href="https://pandas.pydata.org/">Pandas</a></li>
-                <li><a href="https://www.numpy.org">NumPy</a></li>
-                <li><a href="https://matplotlib.org/">Matplotlib</a></li>
-                <li><a href="https://www.scipy.org/scipylib">SciPy</a></li>
-                <li><a href="https://scikit-learn.org/stable/index.html">Scikit-learn</a></li>
-                <li><a href="https://github.com/jyangfsu/WQChartPy/tree/main?tab=readme-ov-file">WQChartPy</a></li>
-                <li><a href="https://seaborn.pydata.org/#">Seaborn</a></li>
-                <li><a href="https://geopandas.org/en/stable/#">GeoPandas</a></li>
-                <li><a href="https://pypi.org/project/folium/">Folium</a></li>
-                <li><a href="https://pypi.org/project/branca/">Branca</a></li>
+                <li><a href="https://pandas.pydata.org/" target="_blank">Pandas</a></li>
+                <li><a href="https://www.numpy.org" target="_blank">NumPy</a></li>
+                <li><a href="https://matplotlib.org/" target="_blank">Matplotlib</a></li>
+                <li><a href="https://www.scipy.org/scipylib" target="_blank">SciPy</a></li>
+                <li><a href="https://scikit-learn.org/stable/index.html" target="_blank">Scikit-learn</a></li>
+                <li><a href="https://github.com/jyangfsu/WQChartPy/tree/main?tab=readme-ov-file" target="_blank">WQChartPy</a></li>
+                <li><a href="https://seaborn.pydata.org/#" target="_blank">Seaborn</a></li>
+                <li><a href="https://geopandas.org/en/stable/#" target="_blank">GeoPandas</a></li>
+                <li><a href="https://pypi.org/project/folium/" target="_blank">Folium</a></li>
+                <li><a href="https://pypi.org/project/branca/" target="_blank">Branca</a></li>
             </ul>
         </ul>
 
         <h2 style="color:#996600">8. Contributors:</h2>
 
         <ul>
-            <li><a href="https://github.com/roxanadrv">Roxana Darvari</a></li>
-            <li><a href="https://github.com/bsvab">Brittany Svab</a></li>
-            <li><a href="https://github.com/ajuarez2112">Alejandro Juarez</a></li>
-            <li><a href="https://github.com/thesarahcain">Sarah Cain</a></li>
+            <li><a href="https://github.com/roxanadrv" target="_blank">Roxana Darvari</a></li>
+            <li><a href="https://github.com/bsvab" target="_blank">Brittany Svab</a></li>
+            <li><a href="https://github.com/ajuarez2112" target="_blank">Alejandro Juarez</a></li>
+            <li><a href="https://github.com/thesarahcain" target="_blank">Sarah Cain</a></li>
         </ul>
     `;
 
